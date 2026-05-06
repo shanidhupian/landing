@@ -23,13 +23,26 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <div className="text-gray-400 space-y-1">
               <p>{businessInfo.address}</p>
-              <p>{businessInfo.city} - {businessInfo.pincode}</p>
-              <p>{businessInfo.state}, India</p>
+              {businessInfo.email && (
+                <p className="mt-2">
+                  <a href={`mailto:${businessInfo.email}`} className="text-primary-200 hover:text-white transition-colors break-all">
+                    {businessInfo.email}
+                  </a>
+                </p>
+              )}
+              {businessInfo.contactName && businessInfo.contactPhone && (
+                <p className="mt-2">
+                  <span className="text-gray-300">{businessInfo.contactName}:</span>{" "}
+                  <a href={`tel:${businessInfo.contactPhone.replace(/\s/g, "")}`} className="text-primary-300 hover:text-white transition-colors">
+                    {businessInfo.contactPhone}
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>© {currentYear} {businessInfo.name}. All rights reserved.</p>
+          <p>© {currentYear} {businessInfo.legalName ?? businessInfo.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

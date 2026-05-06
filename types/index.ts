@@ -7,10 +7,12 @@ export interface Product {
 
 export interface BusinessInfo {
   name: string;
+  legalName?: string;
   address: string;
   city: string;
   state: string;
   pincode: string;
+  email?: string;
   gst: string;
   gstRegistrationDate: string;
   natureOfBusiness: string;
@@ -19,4 +21,6 @@ export interface BusinessInfo {
   employees: string;
   ceo: string;
   establishedYear: string;
+  contactName?: string;
+  contactPhone?: string;
 }

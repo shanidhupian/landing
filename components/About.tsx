@@ -16,27 +16,49 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Us</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">Your trusted partner for quality fabrics and packaging solutions</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-          <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch mb-12">
+          <div className="lg:col-span-7 relative w-full min-h-[280px] sm:min-h-[320px] lg:min-h-[420px] rounded-2xl overflow-hidden shadow-lg">
             <ImageWithFallback src="/images/about/about-us.webp" alt="About Shani Dhupian" fill className="object-cover" />
           </div>
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">{businessInfo.name}</h3>
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+            <h3 className="text-2xl font-semibold text-gray-900">{businessInfo.name}</h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {businessInfo.name} is a leading wholesaler and distributor of cotton fabric, lycra fabric, and bakery boxes, serving customers since {businessInfo.establishedYear} in Surat, Gujarat.
             </p>
-            <p className="text-gray-600 mb-4 leading-relaxed">We pride ourselves on providing high-quality products at competitive prices.</p>
-            <div className="bg-gradient-to-br from-primary-50 to-accent-light rounded-lg p-8 border border-primary-200">
-              <h4 className="text-xl font-semibold text-gray-900 mb-6">Business Information</h4>
-              <div className="space-y-4">
-                <div><span className="text-sm font-medium text-gray-500">Nature of Business</span><p className="text-gray-900 font-semibold">{businessInfo.natureOfBusiness}</p></div>
-                <div><span className="text-sm font-medium text-gray-500">Legal Status</span><p className="text-gray-900 font-semibold">{businessInfo.legalStatus}</p></div>
-                <div><span className="text-sm font-medium text-gray-500">CEO</span><p className="text-gray-900 font-semibold">{businessInfo.ceo}</p></div>
-                <div><span className="text-sm font-medium text-gray-500">GST Number</span><p className="text-gray-900 font-semibold">{businessInfo.gst}</p></div>
+            <p className="text-gray-600 mb-3 leading-relaxed">We pride ourselves on providing high-quality products at competitive prices.</p>
+            </div>
+
+            <div className="mt-3 bg-gradient-to-br from-primary-50 to-accent-light rounded-2xl p-7 sm:p-8 border border-primary-200">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <h4 className="text-lg font-semibold text-gray-900">Business Information</h4>
+                <div className="text-sm text-gray-600">
+                  <span className="font-semibold text-gray-900">GST:</span> {businessInfo.gst}
+                </div>
+              </div>
+
+              <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-5">
+                <div>
+                  <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wide">Nature</span>
+                  <p className="text-base text-gray-900 font-semibold leading-snug">{businessInfo.natureOfBusiness}</p>
+                </div>
+                <div>
+                  <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wide">Legal Status</span>
+                  <p className="text-base text-gray-900 font-semibold leading-snug">{businessInfo.legalStatus}</p>
+                </div>
+                <div>
+                  <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wide">GST Registered</span>
+                  <p className="text-base text-gray-900 font-semibold leading-snug">{businessInfo.gstRegistrationDate}</p>
+                </div>
+                <div>
+                  <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wide">Legal Name</span>
+                  <p className="text-base text-gray-900 font-semibold leading-snug">{businessInfo.legalName ?? businessInfo.ceo}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div key={index} className="bg-gradient-to-br from-primary-50 to-accent-light rounded-lg p-6 text-center border border-primary-100">

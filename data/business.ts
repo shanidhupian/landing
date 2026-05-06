@@ -2,18 +2,23 @@ import { BusinessInfo, Product } from "@/types";
 
 export const businessInfo: BusinessInfo = {
   name: "Shani Dhupian",
-  address: "Ground Floor, First Floor, 195, 196, 197, Sita Nagar Society, Puna Bombay Market Road",
+  legalName: "RADADIYA VIJAY BHIKHABHAI",
+  address:
+    "GROUND FLOOR, FIRST FLOOR, 195, 196, 197, Sita Nagar Society, Puna Bombay Market Road, SITA NAGAR CHOWK, Punagam, Surat, Surat, Gujarat, 395010",
   city: "Surat",
   state: "Gujarat",
   pincode: "395010",
+  email: "inquiry@shanidhupian.in",
   gst: "24AMWPR2708L1ZF",
   gstRegistrationDate: "24-07-2017",
   natureOfBusiness: "Trader - Wholesaler/Distributor",
   legalStatus: "Proprietorship",
   annualTurnover: "5 - 25 Cr",
   employees: "11 to 25 People",
-  ceo: "Jenish Radadiya",
+  ceo: "RADADIYA VIJAY BHIKHABHAI",
   establishedYear: "2009",
+  contactName: "Radadiya Vijay Bhikhabhai",
+  contactPhone: "9512195646",
 };
 
 export const products: Product[] = [

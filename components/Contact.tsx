@@ -13,17 +13,36 @@ export default function Contact() {
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
             <div className="space-y-6">
               <div>
-                <h4 className="text-sm font-medium text-gray-500">Address</h4>
-                <p className="mt-1 text-gray-900">
-                  {businessInfo.address}<br />
-                  {businessInfo.city} - {businessInfo.pincode}<br />
-                  {businessInfo.state}, India
+                <h4 className="text-sm font-medium text-gray-500">CEO</h4>
+                <p className="mt-1 text-gray-900 font-semibold">
+                  {businessInfo.legalName ?? businessInfo.ceo}
                 </p>
               </div>
               <div>
-                <h4 className="text-sm font-medium text-gray-500">CEO</h4>
-                <p className="mt-1 text-gray-900">{businessInfo.ceo}</p>
+                <h4 className="text-sm font-medium text-gray-500">Address</h4>
+                <p className="mt-1 text-gray-900">
+                  {businessInfo.address}
+                </p>
               </div>
+              {businessInfo.email && (
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500">Email</h4>
+                  <a
+                    href={`mailto:${businessInfo.email}`}
+                    className="mt-1 block text-primary-600 font-semibold hover:text-primary-700 hover:underline break-all"
+                  >
+                    {businessInfo.email}
+                  </a>
+                </div>
+              )}
+              {businessInfo.contactPhone && (
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500">Phone</h4>
+                  <a href={`tel:${businessInfo.contactPhone.replace(/\s/g, "")}`} className="mt-1 block text-primary-600 font-semibold hover:text-primary-700 hover:underline">
+                    {businessInfo.contactPhone}
+                  </a>
+                </div>
+              )}
               <div>
                 <h4 className="text-sm font-medium text-gray-500">GST Number</h4>
                 <p className="mt-1 text-gray-900 font-mono">{businessInfo.gst}</p>
